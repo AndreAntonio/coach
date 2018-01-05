@@ -1,5 +1,5 @@
 //
-//  UserSettingsViewController.swift
+//  WorkoutsViewController.swift
 //  coach
 //
 //  Created by Andre Faruolo on 02/01/2018.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class UserSettingsViewController: UIViewController {
+class WorkoutPlanTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.tabBar.isHidden = false
+
         // Do any additional setup after loading the view.
     }
 

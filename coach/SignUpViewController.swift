@@ -7,29 +7,50 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
-class SignUpViewController: UIViewController {
-
+class SignUpViewController: UIViewController, UITextFieldDelegate {
+    
+    @IBOutlet weak var fullNameTextFieldOutlet: UITextField!
+    @IBOutlet weak var emailTextFieldOutlet: UITextField!
+    @IBOutlet weak var passwordTextFieldOutlet: UITextField!
+    @IBOutlet weak var confirmPasswordTextFieldOutlet: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        var textFields = [fullNameTextFieldOutlet, emailTextFieldOutlet, passwordTextFieldOutlet, confirmPasswordTextFieldOutlet]
+        self.setupTextFields(textFields: textFields as! [UITextField])
+      
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func setupTextFields(textFields: [UITextField]){
+        for textField in textFields {
+            textField.layer.masksToBounds = true
+            textField.layer.cornerRadius = 2
+            textField.frame.size.height = 45
+            textField.delegate = self
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func signUpButtonTapped(_ sender: Any) {
+        
+        let email = self.emailTextFieldOutlet.text
+        let password = self.passwordTextFieldOutlet.text
+        
+        let user = Auth.auth()
+        user.createUser(withEmail: email!, password: password!) { (user, error) in
+            if error ==  nil {
+                print("Usuário está logado" +  String(describing: user?.email))
+            }else{
+                print("Usuário não está logado" + String(describing: error))
+        }
     }
-    */
+}
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
 }

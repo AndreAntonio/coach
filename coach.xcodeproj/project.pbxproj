@@ -7,14 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1917E8EC1FFED0D1004D7ABC /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1917E8EB1FFED0D1004D7ABC /* iAd.framework */; };
+		19A9B2691FFEDB3D005520CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19A9B2681FFEDB3D005520CA /* GoogleService-Info.plist */; };
 		19E339DD1FF58B73007D8ED2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E339DC1FF58B73007D8ED2 /* AppDelegate.swift */; };
 		19E339E21FF58B73007D8ED2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19E339E01FF58B73007D8ED2 /* Main.storyboard */; };
 		19E339E41FF58B73007D8ED2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19E339E31FF58B73007D8ED2 /* Assets.xcassets */; };
 		19E339E71FF58B73007D8ED2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19E339E51FF58B73007D8ED2 /* LaunchScreen.storyboard */; };
 		19E339F21FF58B73007D8ED2 /* coachTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E339F11FF58B73007D8ED2 /* coachTests.swift */; };
 		19E339FD1FF58B74007D8ED2 /* coachUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E339FC1FF58B74007D8ED2 /* coachUITests.swift */; };
-		19E33A0D1FF59456007D8ED2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19E33A0C1FF59456007D8ED2 /* GoogleService-Info.plist */; };
 		19E33A121FFB17B9007D8ED2 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E33A111FFB17B9007D8ED2 /* SignInViewController.swift */; };
+		19E33A141FFBBF68007D8ED2 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E33A131FFBBF68007D8ED2 /* SignUpViewController.swift */; };
+		19E33A161FFBCBB6007D8ED2 /* ProgressOverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E33A151FFBCBB6007D8ED2 /* ProgressOverviewTableViewController.swift */; };
+		19E33A181FFBCBD6007D8ED2 /* WorkoutPlanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E33A171FFBCBD6007D8ED2 /* WorkoutPlanTableViewController.swift */; };
+		19E33A1A1FFBCBE5007D8ED2 /* MealPlanTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E33A191FFBCBE5007D8ED2 /* MealPlanTableViewController.swift */; };
+		19E33A1C1FFBCC0E007D8ED2 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E33A1B1FFBCC0E007D8ED2 /* UserSettingsViewController.swift */; };
+		19E33A1E1FFBD194007D8ED2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E33A1D1FFBD194007D8ED2 /* User.swift */; };
+		19E33A201FFDBB63007D8ED2 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19E33A1F1FFDBB63007D8ED2 /* AdSupport.framework */; };
 		35CB1476151F1EB0019D0E23 /* Pods_coachTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEF7E334FF353D452295B538 /* Pods_coachTests.framework */; };
 		55E2093895CB23AEF45F5986 /* Pods_coach.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36589C64F9C4275C943CD8D2 /* Pods_coach.framework */; };
 		94BC8170E52CAB6BBB9E381E /* Pods_coachUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66CE8A1810DE3FDC5B147A5A /* Pods_coachUITests.framework */; };
@@ -38,6 +46,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1917E8EB1FFED0D1004D7ABC /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		19A9B2681FFEDB3D005520CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/Pasta Sem Título 2/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		19E339D91FF58B73007D8ED2 /* coach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coach.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19E339DC1FF58B73007D8ED2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19E339E11FF58B73007D8ED2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -50,8 +60,14 @@
 		19E339F81FF58B74007D8ED2 /* coachUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = coachUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19E339FC1FF58B74007D8ED2 /* coachUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coachUITests.swift; sourceTree = "<group>"; };
 		19E339FE1FF58B74007D8ED2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		19E33A0C1FF59456007D8ED2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		19E33A111FFB17B9007D8ED2 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		19E33A131FFBBF68007D8ED2 /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		19E33A151FFBCBB6007D8ED2 /* ProgressOverviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressOverviewTableViewController.swift; sourceTree = "<group>"; };
+		19E33A171FFBCBD6007D8ED2 /* WorkoutPlanTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlanTableViewController.swift; sourceTree = "<group>"; };
+		19E33A191FFBCBE5007D8ED2 /* MealPlanTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealPlanTableViewController.swift; sourceTree = "<group>"; };
+		19E33A1B1FFBCC0E007D8ED2 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsViewController.swift; sourceTree = "<group>"; };
+		19E33A1D1FFBD194007D8ED2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		19E33A1F1FFDBB63007D8ED2 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		36589C64F9C4275C943CD8D2 /* Pods_coach.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_coach.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		37A4586DF41BC2298DB8060F /* Pods-coachTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coachTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-coachTests/Pods-coachTests.release.xcconfig"; sourceTree = "<group>"; };
 		3E50E7E9D04824EED26ACEE7 /* Pods-coachTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-coachTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-coachTests/Pods-coachTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -68,6 +84,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1917E8EC1FFED0D1004D7ABC /* iAd.framework in Frameworks */,
+				19E33A201FFDBB63007D8ED2 /* AdSupport.framework in Frameworks */,
 				55E2093895CB23AEF45F5986 /* Pods_coach.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,8 +152,8 @@
 				19E33A0E1FFB1771007D8ED2 /* Model */,
 				19E339DC1FF58B73007D8ED2 /* AppDelegate.swift */,
 				19E339E31FF58B73007D8ED2 /* Assets.xcassets */,
+				19A9B2681FFEDB3D005520CA /* GoogleService-Info.plist */,
 				19E339E81FF58B73007D8ED2 /* Info.plist */,
-				19E33A0C1FF59456007D8ED2 /* GoogleService-Info.plist */,
 			);
 			path = coach;
 			sourceTree = "<group>";
@@ -161,6 +179,7 @@
 		19E33A0E1FFB1771007D8ED2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				19E33A1D1FFBD194007D8ED2 /* User.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -178,6 +197,11 @@
 			isa = PBXGroup;
 			children = (
 				19E33A111FFB17B9007D8ED2 /* SignInViewController.swift */,
+				19E33A131FFBBF68007D8ED2 /* SignUpViewController.swift */,
+				19E33A151FFBCBB6007D8ED2 /* ProgressOverviewTableViewController.swift */,
+				19E33A171FFBCBD6007D8ED2 /* WorkoutPlanTableViewController.swift */,
+				19E33A191FFBCBE5007D8ED2 /* MealPlanTableViewController.swift */,
+				19E33A1B1FFBCC0E007D8ED2 /* UserSettingsViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -185,6 +209,8 @@
 		B0BA42DE67DBA2340D1407F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1917E8EB1FFED0D1004D7ABC /* iAd.framework */,
+				19E33A1F1FFDBB63007D8ED2 /* AdSupport.framework */,
 				36589C64F9C4275C943CD8D2 /* Pods_coach.framework */,
 				FEF7E334FF353D452295B538 /* Pods_coachTests.framework */,
 				66CE8A1810DE3FDC5B147A5A /* Pods_coachUITests.framework */,
@@ -309,7 +335,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19E339E71FF58B73007D8ED2 /* LaunchScreen.storyboard in Resources */,
-				19E33A0D1FF59456007D8ED2 /* GoogleService-Info.plist in Resources */,
+				19A9B2691FFEDB3D005520CA /* GoogleService-Info.plist in Resources */,
 				19E339E41FF58B73007D8ED2 /* Assets.xcassets in Resources */,
 				19E339E21FF58B73007D8ED2 /* Main.storyboard in Resources */,
 			);
@@ -488,7 +514,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19E33A141FFBBF68007D8ED2 /* SignUpViewController.swift in Sources */,
+				19E33A181FFBCBD6007D8ED2 /* WorkoutPlanTableViewController.swift in Sources */,
+				19E33A1C1FFBCC0E007D8ED2 /* UserSettingsViewController.swift in Sources */,
 				19E33A121FFB17B9007D8ED2 /* SignInViewController.swift in Sources */,
+				19E33A1E1FFBD194007D8ED2 /* User.swift in Sources */,
+				19E33A161FFBCBB6007D8ED2 /* ProgressOverviewTableViewController.swift in Sources */,
+				19E33A1A1FFBCBE5007D8ED2 /* MealPlanTableViewController.swift in Sources */,
 				19E339DD1FF58B73007D8ED2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

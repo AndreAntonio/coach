@@ -1,5 +1,5 @@
 //
-//  WorkoutsViewController.swift
+//  MealplanViewController.swift
 //  coach
 //
 //  Created by Andre Faruolo on 02/01/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WorkoutsViewController: UIViewController {
+class MealPlanViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

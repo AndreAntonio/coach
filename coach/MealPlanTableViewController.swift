@@ -1,5 +1,5 @@
 //
-//  progressOverviewViewController.swift
+//  MealplanViewController.swift
 //  coach
 //
 //  Created by Andre Faruolo on 02/01/2018.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProgressOverviewViewController: UIViewController {
+class MealPlanTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import Firebase
 
 class UserSettingsViewController: UIViewController {
 
+    @IBOutlet weak var welcomeLabelOutlet: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tabBarController?.tabBar.isHidden = false
+        
+        self.welcomeLabelOutlet.text = Auth.auth().currentUser?.email
+        
         // Do any additional setup after loading the view.
     }
 

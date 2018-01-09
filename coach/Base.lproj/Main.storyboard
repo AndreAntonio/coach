@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -110,8 +110,10 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hL2-G5-kb9">
                                 <rect key="frame" x="143" y="94" width="91" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.91764705879999997" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="camera"/>
+                                <state key="normal" backgroundImage="camera-button"/>
+                                <connections>
+                                    <action selector="changeUserImageButtonTapped:" destination="Mdz-PQ-5Oh" eventType="touchUpInside" id="FYL-BP-H33"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="FULL NAME" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="auM-BG-usl">
                                 <rect key="frame" x="67" y="311" width="240" height="45"/>
@@ -166,7 +168,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ADD PROFILE PICTURE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XBr-lO-k58">
-                                <rect key="frame" x="100" y="193" width="175" height="21"/>
+                                <rect key="frame" x="67" y="193" width="242" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <color key="textColor" red="0.91764705879999997" green="0.2274509804" blue="0.2274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -181,11 +183,14 @@
                         <outlet property="emailTextFieldOutlet" destination="0OI-pM-5mL" id="1XY-30-7d8"/>
                         <outlet property="fullNameTextFieldOutlet" destination="auM-BG-usl" id="biV-uK-0Eo"/>
                         <outlet property="passwordTextFieldOutlet" destination="SKe-4U-qyO" id="P82-Cm-d25"/>
+                        <outlet property="profilePicTextOutlet" destination="XBr-lO-k58" id="yPO-81-wpc"/>
+                        <outlet property="signUpButtonOutlet" destination="H3A-Ls-jrj" id="On6-rv-f25"/>
+                        <outlet property="userImageButtonOutlet" destination="hL2-G5-kb9" id="kOy-3R-UDb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gqI-o6-iyl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1126" y="90"/>
+            <point key="canvasLocation" x="1125.5999999999999" y="89.505247376311857"/>
         </scene>
         <!--Meal Plan-->
         <scene sceneID="VyC-Q2-I7N">
@@ -231,14 +236,26 @@
                     <view key="view" contentMode="scaleToFill" id="9WM-p3-Mhe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qP6-3A-dpe">
+                                <rect key="frame" x="16" y="323" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="hce-53-kDa"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="User Settings" id="p3S-2g-UGt" userLabel="User Settings"/>
+                    <connections>
+                        <outlet property="welcomeLabelOutlet" destination="qP6-3A-dpe" id="kua-St-a3k"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="J4C-s7-8jB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2809" y="90"/>
+            <point key="canvasLocation" x="2808.8000000000002" y="89.505247376311857"/>
         </scene>
         <!--Workout Plan-->
         <scene sceneID="ZM0-cz-VSq">
@@ -326,10 +343,10 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="J90-SJ-LFi" kind="relationship" relationship="viewControllers" id="1AO-yY-ESw"/>
-                        <segue destination="dJj-nM-1Ab" kind="relationship" relationship="viewControllers" id="uEL-uk-Xfg"/>
-                        <segue destination="a3Y-HY-i2w" kind="relationship" relationship="viewControllers" id="jWo-hR-V7M"/>
                         <segue destination="fej-aI-dla" kind="relationship" relationship="viewControllers" id="LQ4-av-Cpc"/>
+                        <segue destination="a3Y-HY-i2w" kind="relationship" relationship="viewControllers" id="jWo-hR-V7M"/>
+                        <segue destination="dJj-nM-1Ab" kind="relationship" relationship="viewControllers" id="uEL-uk-Xfg"/>
+                        <segue destination="J90-SJ-LFi" kind="relationship" relationship="viewControllers" id="1AO-yY-ESw"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qqq-N4-0Ci" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -337,4 +354,7 @@
             <point key="canvasLocation" x="1857" y="90"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="camera-button" width="91" height="91"/>
+    </resources>
 </document>

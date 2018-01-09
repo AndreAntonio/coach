@@ -44,7 +44,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate{
             if error == nil {
                
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                var nextVC = storyboard.instantiateViewController(withIdentifier: "progressOverviewTableViewController") as! ProgressOverviewTableViewController
+                var nextVC = storyboard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
                 self.present(nextVC, animated: true, completion: nil)
                 
             } else {
@@ -61,7 +61,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate{
     @IBAction func SignUpButtonTapped(_ sender: Any) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let nextVC = storyboard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
+        let nextVC = storyboard.instantiateViewController(withIdentifier: "signUpViewController") as! SignUpViewController
         self.present(nextVC, animated: true, completion: nil)
 
 }

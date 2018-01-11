@@ -21,15 +21,26 @@ class ProgressOverviewTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
-    */
+    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "progressTableViewCell", for: indexPath) as! ProgressTableViewCell
+        
+        var image : UIImage = UIImage(named: "camera-button")!
+            
+            cell.dateLabelOutlet.text = "dads"
+            cell.currentWeightLabelOutlet.text = "dadsa"
+            cell.weekDayLabelOutlet.text = "dsas"
+            cell.progressBackgroundImage.image = image
+            
+            return cell
+        
+    }
+    
 
+ 
 }

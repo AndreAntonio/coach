@@ -10,32 +10,29 @@ import UIKit
 import Firebase
 
 class UserSettingsViewController: UIViewController {
-
+    
     @IBOutlet weak var welcomeLabelOutlet: UILabel!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.welcomeLabelOutlet.text = Auth.auth().currentUser?.email
+        let userDAO = UserDAO()
         
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        userDAO.listAll(completion: { usersArray in
+            
+            if let usersArray = usersArray {
+                
+                print("============================================")
+                print(usersArray)
+                
+            }
+            
+        } )
+        
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
 }

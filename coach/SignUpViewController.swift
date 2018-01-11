@@ -80,8 +80,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
                         
                         if self.passwordTextFieldOutlet.text == self.confirmPasswordTextFieldOutlet.text {
                             
-                           
-                            
                             let user = Auth.auth()
                             user.createUser(withEmail: email, password: password) { (user, error) in
                                 if error ==  nil {
@@ -89,33 +87,15 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
                                     self.signUpButtonOutlet.isEnabled = false
                                     self.signUpButtonOutlet.setTitle("CREATING USER", for: .normal)
                                     
-                                    let storage = Storage.storage().reference()
-                                    let images = storage.child("images")
-                                    let profile_pics = images.child("profile_pics")
+                                    let userObject = User(uid: (user?.uid)!, fullName: self.fullNameTextFieldOutlet.text!, email: self.emailTextFieldOutlet.text!, profileImage: self.retrievedImage)
                                     
-                                    let database = Database.database().reference()
-                                    let users = database.child("users")
-                                    
-                                    let  userData = ["name" : self.fullNameTextFieldOutlet.text, "email" : self.emailTextFieldOutlet.text]
-                                    
-                                    users.child(String(describing: user!.uid)).setValue(userData)
-                                    
-                                    if let imageData = UIImageJPEGRepresentation(image, 0.5) {
-                                        
-                                        profile_pics.child(String(user!.uid)).putData(imageData, metadata: nil, completion: { (metaData, error) in
-                                            
-                                            if error == nil {
-                                                print("deu bom")
-                                            } else {
-                                                print(String(describing: error))
-                                            }
-                                        })
-                                        
-                                    }
+                                    let userDAO = UserDAO()
+                                    userDAO.create(user: userObject)
                                     
                                     print("User succesfully created" +  String( describing: user!.email))
                                     
                                 }else{
+                                    
                                     var alert = UIAlertController(title: "Error creating new user.", message: String(describing: error), preferredStyle: .alert)
                                     
                                     alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))

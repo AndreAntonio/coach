@@ -11,6 +11,9 @@ import UIKit
 class ProgressTableViewCell: UITableViewCell {
     
     @IBOutlet weak var progressBackgroundImage: UIImageView!
+    @IBOutlet weak var weekDayLabelOutlet: UILabel!
+    @IBOutlet weak var dateLabelOutlet: UILabel!
+    @IBOutlet weak var currentWeightLabelOutlet: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

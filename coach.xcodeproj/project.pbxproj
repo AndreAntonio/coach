@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1917E8EC1FFED0D1004D7ABC /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1917E8EB1FFED0D1004D7ABC /* iAd.framework */; };
+		19725524200576D200AF0013 /* UserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19725523200576D200AF0013 /* UserDAO.swift */; };
 		19A9B2691FFEDB3D005520CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19A9B2681FFEDB3D005520CA /* GoogleService-Info.plist */; };
 		19A9B26B20040213005520CA /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A9B26A20040213005520CA /* ProgressTableViewCell.swift */; };
 		19E339DD1FF58B73007D8ED2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E339DC1FF58B73007D8ED2 /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		1917E8EB1FFED0D1004D7ABC /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		19725523200576D200AF0013 /* UserDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDAO.swift; sourceTree = "<group>"; };
 		19A9B2681FFEDB3D005520CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/Pasta Sem Título 2/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		19A9B26A20040213005520CA /* ProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableViewCell.swift; sourceTree = "<group>"; };
 		19E339D91FF58B73007D8ED2 /* coach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coach.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -124,6 +126,14 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		19725522200576B700AF0013 /* Data Access Objects */ = {
+			isa = PBXGroup;
+			children = (
+				19725523200576D200AF0013 /* UserDAO.swift */,
+			);
+			name = "Data Access Objects";
+			sourceTree = "<group>";
+		};
 		19E339D01FF58B73007D8ED2 = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +191,7 @@
 		19E33A0E1FFB1771007D8ED2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				19725522200576B700AF0013 /* Data Access Objects */,
 				19E33A1D1FFBD194007D8ED2 /* User.swift */,
 			);
 			name = Model;
@@ -520,6 +531,7 @@
 				19E33A141FFBBF68007D8ED2 /* SignUpViewController.swift in Sources */,
 				19E33A181FFBCBD6007D8ED2 /* WorkoutPlanTableViewController.swift in Sources */,
 				19A9B26B20040213005520CA /* ProgressTableViewCell.swift in Sources */,
+				19725524200576D200AF0013 /* UserDAO.swift in Sources */,
 				19E33A1C1FFBCC0E007D8ED2 /* UserSettingsViewController.swift in Sources */,
 				19E33A121FFB17B9007D8ED2 /* SignInViewController.swift in Sources */,
 				19E33A1E1FFBD194007D8ED2 /* User.swift in Sources */,

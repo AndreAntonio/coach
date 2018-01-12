@@ -16,6 +16,7 @@ public class User {
     var email : String!
     var profileImage : UIImage?
     var profileImageUrl : String?
+    var workouts : [Workout]?
     
     init(){
         self.uid = ""

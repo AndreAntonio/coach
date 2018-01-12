@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		1917E8EC1FFED0D1004D7ABC /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1917E8EB1FFED0D1004D7ABC /* iAd.framework */; };
 		19725524200576D200AF0013 /* UserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19725523200576D200AF0013 /* UserDAO.swift */; };
+		197255262007FB7700AF0013 /* WorkoutPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197255252007FB7600AF0013 /* WorkoutPlanTableViewCell.swift */; };
+		197255282008581600AF0013 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197255272008581600AF0013 /* Workout.swift */; };
+		1972552A2008590100AF0013 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197255292008590000AF0013 /* Exercise.swift */; };
+		1972552C20085A6E00AF0013 /* WorkoutDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1972552B20085A6E00AF0013 /* WorkoutDAO.swift */; };
+		1972552E20085A7600AF0013 /* ExerciseDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1972552D20085A7600AF0013 /* ExerciseDAO.swift */; };
 		19A9B2691FFEDB3D005520CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19A9B2681FFEDB3D005520CA /* GoogleService-Info.plist */; };
 		19A9B26B20040213005520CA /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A9B26A20040213005520CA /* ProgressTableViewCell.swift */; };
 		19E339DD1FF58B73007D8ED2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E339DC1FF58B73007D8ED2 /* AppDelegate.swift */; };
@@ -50,6 +55,11 @@
 /* Begin PBXFileReference section */
 		1917E8EB1FFED0D1004D7ABC /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		19725523200576D200AF0013 /* UserDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDAO.swift; sourceTree = "<group>"; };
+		197255252007FB7600AF0013 /* WorkoutPlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlanTableViewCell.swift; sourceTree = "<group>"; };
+		197255272008581600AF0013 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
+		197255292008590000AF0013 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
+		1972552B20085A6E00AF0013 /* WorkoutDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDAO.swift; sourceTree = "<group>"; };
+		1972552D20085A7600AF0013 /* ExerciseDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDAO.swift; sourceTree = "<group>"; };
 		19A9B2681FFEDB3D005520CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/Pasta Sem Título 2/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		19A9B26A20040213005520CA /* ProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableViewCell.swift; sourceTree = "<group>"; };
 		19E339D91FF58B73007D8ED2 /* coach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coach.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				19725523200576D200AF0013 /* UserDAO.swift */,
+				1972552B20085A6E00AF0013 /* WorkoutDAO.swift */,
+				1972552D20085A7600AF0013 /* ExerciseDAO.swift */,
 			);
 			name = "Data Access Objects";
 			sourceTree = "<group>";
@@ -193,6 +205,8 @@
 			children = (
 				19725522200576B700AF0013 /* Data Access Objects */,
 				19E33A1D1FFBD194007D8ED2 /* User.swift */,
+				197255272008581600AF0013 /* Workout.swift */,
+				197255292008590000AF0013 /* Exercise.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -203,6 +217,7 @@
 				19E339E51FF58B73007D8ED2 /* LaunchScreen.storyboard */,
 				19E339E01FF58B73007D8ED2 /* Main.storyboard */,
 				19A9B26A20040213005520CA /* ProgressTableViewCell.swift */,
+				197255252007FB7600AF0013 /* WorkoutPlanTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -528,16 +543,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1972552C20085A6E00AF0013 /* WorkoutDAO.swift in Sources */,
 				19E33A141FFBBF68007D8ED2 /* SignUpViewController.swift in Sources */,
 				19E33A181FFBCBD6007D8ED2 /* WorkoutPlanTableViewController.swift in Sources */,
 				19A9B26B20040213005520CA /* ProgressTableViewCell.swift in Sources */,
 				19725524200576D200AF0013 /* UserDAO.swift in Sources */,
 				19E33A1C1FFBCC0E007D8ED2 /* UserSettingsViewController.swift in Sources */,
 				19E33A121FFB17B9007D8ED2 /* SignInViewController.swift in Sources */,
+				1972552E20085A7600AF0013 /* ExerciseDAO.swift in Sources */,
 				19E33A1E1FFBD194007D8ED2 /* User.swift in Sources */,
 				19E33A161FFBCBB6007D8ED2 /* ProgressOverviewTableViewController.swift in Sources */,
 				19E33A1A1FFBCBE5007D8ED2 /* MealPlanTableViewController.swift in Sources */,
+				1972552A2008590100AF0013 /* Exercise.swift in Sources */,
 				19E339DD1FF58B73007D8ED2 /* AppDelegate.swift in Sources */,
+				197255262007FB7700AF0013 /* WorkoutPlanTableViewCell.swift in Sources */,
+				197255282008581600AF0013 /* Workout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

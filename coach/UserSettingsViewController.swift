@@ -17,6 +17,11 @@ class UserSettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let workout = Workout()
+        let workoutDAO = WorkoutDAO()
+        
+        workoutDAO.create(workout: workout)
+        
         let userDAO = UserDAO()
         
         userDAO.listAll(completion: { usersArray in

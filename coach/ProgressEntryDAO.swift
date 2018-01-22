@@ -52,8 +52,52 @@ public class ProgressEntryDAO {
             weekDayString = "Saturday"
         }
         
+        var monthString = ""
+        
+            if month == 1 {
+                monthString = "January"
+            } else if month == 2 {
+                monthString = "February"
+            } else if month == 3 {
+                monthString = "March"
+            } else if month == 4 {
+                monthString = "April"
+            } else if month == 5 {
+                monthString = "May"
+            } else if month == 6 {
+                monthString = "June"
+            } else if month == 7 {
+                monthString = "July"
+            } else if month == 8 {
+                monthString = "August"
+            } else if month == 9 {
+                monthString = "September"
+            } else if month == 10 {
+                monthString = "October"
+            } else if month == 11 {
+                monthString = "November"
+            } else if month == 12 {
+                monthString = "December"
+            }
+            
+            var sufix : String = ""
+            
+            if (day == 1 || day == 21) || day == 31 {
+                sufix = "st"
+            } else if (day == 2 || day == 22) {
+                sufix = "nd"
+            } else if day == 3 || day == 23 {
+                sufix = "rd"
+            } else {
+                sufix = "th"
+            }
+            
+            
+        var dateDisplay = monthString + " " + String(day) + sufix
+        
         progressEntry.date = dateString
         progressEntry.weekday = weekDayString
+        progressEntry.dateDisplay = dateDisplay
         
         var userId = Auth.auth().currentUser?.uid as! String
 
@@ -73,7 +117,7 @@ public class ProgressEntryDAO {
                     
                     progressEntry.progressImageUrl = (metadata?.downloadURL()?.absoluteString)!
                     
-                    let progressEntryData = ["imageUrl" : progressEntry.progressImageUrl, "date" : progressEntry.date, "weekday" : progressEntry.weekday, "milestone" : progressEntry.milestone, "currentWeight" : progressEntry.currentWeight] as [String : Any]
+                    let progressEntryData = ["imageUrl" : progressEntry.progressImageUrl, "date" : progressEntry.date,"dateDisplay" : progressEntry.dateDisplay, "weekday" : progressEntry.weekday, "milestone" : progressEntry.milestone, "currentWeight" : progressEntry.currentWeight] as [String : Any]
                     user.child("progressEntries").child(progressId).setValue(progressEntryData)
                     
                 } else {

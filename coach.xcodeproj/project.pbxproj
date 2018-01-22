@@ -10,6 +10,7 @@
 		1917E8EC1FFED0D1004D7ABC /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1917E8EB1FFED0D1004D7ABC /* iAd.framework */; };
 		1948922A2014F4D800823503 /* ProgressEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194892292014F4D800823503 /* ProgressEntry.swift */; };
 		1948922C2014F60E00823503 /* ProgressEntryDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1948922B2014F60E00823503 /* ProgressEntryDAO.swift */; };
+		1948922E2016593D00823503 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1948922D2016593D00823503 /* DataManager.swift */; };
 		19725524200576D200AF0013 /* UserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19725523200576D200AF0013 /* UserDAO.swift */; };
 		197255262007FB7700AF0013 /* WorkoutPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197255252007FB7600AF0013 /* WorkoutPlanTableViewCell.swift */; };
 		197255282008581600AF0013 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197255272008581600AF0013 /* Workout.swift */; };
@@ -63,6 +64,7 @@
 		1917E8EB1FFED0D1004D7ABC /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		194892292014F4D800823503 /* ProgressEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressEntry.swift; sourceTree = "<group>"; };
 		1948922B2014F60E00823503 /* ProgressEntryDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressEntryDAO.swift; sourceTree = "<group>"; };
+		1948922D2016593D00823503 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		19725523200576D200AF0013 /* UserDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDAO.swift; sourceTree = "<group>"; };
 		197255252007FB7600AF0013 /* WorkoutPlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlanTableViewCell.swift; sourceTree = "<group>"; };
 		197255272008581600AF0013 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 				1972553520109B4700AF0013 /* SetWorkoutFrequencyViewController.swift */,
 				197255372010F59C00AF0013 /* NewExerciseViewController.swift */,
 				19725539201298D500AF0013 /* NewProgressEntryViewController.swift */,
+				1948922D2016593D00823503 /* DataManager.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -571,6 +574,7 @@
 				19E33A181FFBCBD6007D8ED2 /* WorkoutPlanTableViewController.swift in Sources */,
 				19A9B26B20040213005520CA /* ProgressTableViewCell.swift in Sources */,
 				19725530200D167100AF0013 /* CustomUITextField.swift in Sources */,
+				1948922E2016593D00823503 /* DataManager.swift in Sources */,
 				19725524200576D200AF0013 /* UserDAO.swift in Sources */,
 				19E33A1C1FFBCC0E007D8ED2 /* UserSettingsViewController.swift in Sources */,
 				1948922A2014F4D800823503 /* ProgressEntry.swift in Sources */,

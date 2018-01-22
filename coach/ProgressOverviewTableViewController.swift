@@ -33,6 +33,7 @@ class ProgressOverviewTableViewController: UITableViewController {
                 
                 let currentWeight = data!["currentWeight"] as! String
                 let weekday = data!["weekday"] as! String
+                let dateDisplay = data!["dateDisplay"] as! String
                 let imageUrl = data!["imageUrl"] as! String
                 
                 let entryInstance = ProgressEntry()
@@ -49,6 +50,7 @@ class ProgressOverviewTableViewController: UITableViewController {
                 })
                 entryInstance.currentWeight = currentWeight
                 entryInstance.weekday = weekday
+                entryInstance.dateDisplay = dateDisplay
                 
                 newItems.append(entryInstance)
                 
@@ -77,8 +79,8 @@ class ProgressOverviewTableViewController: UITableViewController {
         
             var image : UIImage = UIImage(named: "camera-button")!
             
-            cell.dateLabelOutlet.text = "dads"
-            cell.currentWeightLabelOutlet.text = self.progressEntries[indexPath.row].currentWeight
+            cell.dateLabelOutlet.text = self.progressEntries[indexPath.row].dateDisplay
+            cell.currentWeightLabelOutlet.text = self.progressEntries[indexPath.row].currentWeight + " kg"
             cell.weekDayLabelOutlet.text = self.progressEntries[indexPath.row].weekday
         
             var url = progressEntries[indexPath.row].progressImageUrl
@@ -103,6 +105,8 @@ class ProgressOverviewTableViewController: UITableViewController {
         self.navigationController?.pushViewController(nextVC, animated: true)
         
     }
+    
+
     
     
 

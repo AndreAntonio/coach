@@ -23,7 +23,7 @@ class UserSettingsViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         self.userInfoTableViewOutlet.delegate = self
         self.userInfoTableViewOutlet.dataSource = self
         self.userNameOutlet.text = ""

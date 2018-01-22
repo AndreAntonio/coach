@@ -12,6 +12,8 @@ class SetWorkoutFrequencyViewController: UIViewController, UIPickerViewDelegate,
    
     var frequencyOptions = ["Daily", "Every Other Day", "Twice a Week", "Weekly"]
     
+    var selectedFrequency = ""
+    
     @IBOutlet weak var frequencyPickerViewOutlet: UIPickerView!
     @IBOutlet weak var cancelButtonOutlet: UIButton!
     @IBOutlet weak var doneButtonOutlet: UIButton!
@@ -19,6 +21,8 @@ class SetWorkoutFrequencyViewController: UIViewController, UIPickerViewDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.view.endEditing(true)
 
         self.backgroundViewOutlet.layer.masksToBounds = true
         self.backgroundViewOutlet.layer.cornerRadius = 2
@@ -50,13 +54,26 @@ class SetWorkoutFrequencyViewController: UIViewController, UIPickerViewDelegate,
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
         
-        self.dismiss(animated: true, completion: nil)
-        
+        self.navigationController?.popViewController(animated: true)
+
     }
     
     @IBAction func doneButtonTapped(_ sender: Any) {
         
-        self.dismiss(animated: true, completion: nil)
+        DataManager.shared.workoutFrequency = self.selectedFrequency
+        
+        self.navigationController?.popViewController(animated: true)
+        
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        selectedFrequency = frequencyOptions[row]
         
     }
     

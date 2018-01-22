@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class WorkoutPlanTableViewController: UITableViewController
 {
@@ -17,25 +18,39 @@ class WorkoutPlanTableViewController: UITableViewController
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.tableView.separatorColor = UIColor.clear
         
-        var workout1 = Workout(name: "workoutA", description: "desc", frequency: "daily")
-        var workout2 = Workout(name: "workoutB", description: "desc", frequency: "daily")
+        let userId = Auth.auth().currentUser?.uid as! String
+        let dbRef = Database.database().reference().child("users").child(userId).child("workouts")
         
-        workouts.append(workout1)
-        workouts.append(workout2)
-        
-        var workoutDAO = WorkoutDAO()
-    
-        workoutDAO.listAll(completion: { workoutsArray in
+        dbRef.observe(.value, with: {snapshot in
             
-            if let workoutsArray = workoutsArray {
+            var newItems : [Workout] = []
+            
+            for child in snapshot.children.allObjects as! [DataSnapshot] {
                 
-                print("============================================")
-                print(workoutsArray)
+                let data = child.value as? NSDictionary
+                
+                let workoutName = data!["name"] as! String
+                let workoutDescription = data!["description"] as! String
+                
+                let workoutInstance = Workout()
+                
+                workoutInstance.name = workoutName
+                workoutInstance.description = workoutDescription
+                
+                newItems.append(workoutInstance)
+                
             }
-        } )
+            
+            self.workouts = newItems
+            self.tableView.reloadData()
+            
+        })
+       
+    
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -64,6 +79,7 @@ class WorkoutPlanTableViewController: UITableViewController
         let cell = tableView.dequeueReusableCell(withIdentifier: "workoutPlanTableViewCell", for: indexPath) as! WorkoutPlanTableViewCell
         
         cell.workoutNameLabelOutlet.text = workouts[indexPath.row].name
+        cell.workoutDescriptionLabelOutlet.text = workouts[indexPath.row].description
         
         return cell
         

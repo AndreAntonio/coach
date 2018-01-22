@@ -21,10 +21,6 @@ public class ExerciseDAO {
         
         var userId = Auth.auth().currentUser?.uid as! String
         
-        exercise.name = "Exercise A"
-        exercise.reps = 10
-        exercise.sets = 3
-        
         let exercises = database.child("users").child(userId).child("workouts").child(workout.name).child("exercises")
         
         let exerciseData = ["name" : exercise.name, "reps" : String(exercise.reps), "sets" : String(exercise.sets)] as [String : Any]

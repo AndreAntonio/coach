@@ -15,8 +15,7 @@ public class ProgressEntry {
     var progressImageUrl : String
     var weekday : String
     var date : String!
-    var month : String
-    var day : String
+    var dateDisplay : String!
     var milestone : String
     var currentWeight : String
     
@@ -24,8 +23,7 @@ public class ProgressEntry {
         
         self.progressImageUrl = ""
         self.weekday = ""
-        self.month = ""
-        self.day = ""
+        self.dateDisplay = ""
         self.milestone = ""
         self.currentWeight = ""
 

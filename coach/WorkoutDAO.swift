@@ -20,13 +20,41 @@ public class WorkoutDAO {
     
     public func create( workout : Workout) {
         
+        let dateToString = NSDate()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let dateString = dateFormatter.string(from: dateToString as Date)
+        
+        let date =  Date()
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
+        let hour = calendar.component(.hour, from: date)
+        let minute = calendar.component(.minute, from: date)
+        let second = calendar.component(.second, from: date)
+        let weekDay = calendar.component(.weekday, from: date)
+        
+        var workoutId = ("\(year)\(month)\(day)\(hour)\(minute)\(second)")
+        
         var userId = Auth.auth().currentUser?.uid as! String
+        
+        workout.id = workoutId
         
         let workouts = database.child("users").child(userId).child("workouts")
         
         let workoutData = ["name" : workout.name, "description" : workout.description, "frequency": workout.frequency ] as [String : Any]
         
-        workouts.child(workout.name).setValue(workoutData)
+        workouts.child(workout.id).setValue(workoutData)
+        
+        var exercises = workout.exercises
+        
+        for exercise in exercises! {
+            
+            let exerciseData = ["name" : exercise.name, "reps": String(exercise.reps), "sets" : String(exercise.sets)]
+            workouts.child(workout.id).child("exercises").child(exercise.name).setValue(exerciseData)
+            
+        }
         
         
         

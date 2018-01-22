@@ -10,7 +10,7 @@ import UIKit
 
 class NewExerciseViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    var exercises : [Exercise]!
+    var exercises : [Exercise] = []
     
     var presentWorkout : String!
     
@@ -99,11 +99,21 @@ class NewExerciseViewController: UIViewController, UITextFieldDelegate, UIPicker
     }
     
     @IBAction func doneButtonTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        
+        var exercise = Exercise()
+        
+        exercise.name = self.exerciseNameTextFieldOutlet.text!
+        exercise.reps = self.repAmountPickerViewOutlet.selectedRow(inComponent: 0) as Int
+        exercise.sets = self.setAmountPickerViewOutlet.selectedRow(inComponent: 0) as Int
+        
+        self.exercises.append(exercise)
+        DataManager.shared.exercises = self.exercises
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

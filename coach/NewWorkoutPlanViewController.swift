@@ -10,7 +10,7 @@ import UIKit
 
 class NewWorkoutPlanViewController: UIViewController, UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource {
  
-    var exercises : [Exercise]!
+    var exercises : [Exercise] = []
     var setFrequency : String!
     
     @IBOutlet weak var exercisesTableViewOutlet: UITableView!
@@ -23,6 +23,13 @@ class NewWorkoutPlanViewController: UIViewController, UITextFieldDelegate, UITab
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        self.setFrequencyTextFieldOutlet.text = ""
+        DataManager.shared.workoutFrequency = ""
+
+        
+        self.exercises = []
+        DataManager.shared.exercises = []
         
        var textFields = [workoutTitleTextFieldOutlet, workoutDescriptionTextFieldOutlet, setFrequencyTextFieldOutlet]
         self.setupTextFields(textFields: textFields as! [UITextField])
@@ -30,7 +37,25 @@ class NewWorkoutPlanViewController: UIViewController, UITextFieldDelegate, UITab
         self.exercisesTableViewOutlet.delegate = self
         self.exercisesTableViewOutlet.dataSource = self
         
+        
        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+        super.viewWillAppear(true)
+        
+        print("eai n vai funfar memo ?")
+        
+        self.exercises = DataManager.shared.exercises
+        print(exercises)
+        
+        print(DataManager.shared.workoutFrequency)
+        
+        self.setFrequencyTextFieldOutlet.text = DataManager.shared.workoutFrequency
+        
+      self.exercisesTableViewOutlet.reloadData()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -50,12 +75,15 @@ class NewWorkoutPlanViewController: UIViewController, UITextFieldDelegate, UITab
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return exercises.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell()
+        
+        cell.textLabel?.text = self.exercises[indexPath.row].name
+        print(self.exercises[indexPath.row].name)
         
         return cell
     }
@@ -64,14 +92,15 @@ class NewWorkoutPlanViewController: UIViewController, UITextFieldDelegate, UITab
         
         if textField == self.setFrequencyTextFieldOutlet {
             
+            self.view.endEditing(true)
+            
             print("é isso q nois tamo buscando")
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
             let nextVC = storyboard.instantiateViewController(withIdentifier: "setWorkoutFrequencyViewController") as! UIViewController
             
-            self.present(nextVC, animated: true, completion: nil)
-            
+            self.navigationController?.pushViewController(nextVC, animated: true)
             self.view.endEditing(true)
             
         }
@@ -85,14 +114,31 @@ class NewWorkoutPlanViewController: UIViewController, UITextFieldDelegate, UITab
         
         nextVC.exercises = self.exercises
         
-        self.present(nextVC, animated: true, completion: nil)
+        self.navigationController?.pushViewController(nextVC, animated: true)
         
         
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     @IBAction func doneButtonTapped(_ sender: Any) {
         
         self.navigationController?.popViewController(animated: true)
+        
+        var workoutDAO = WorkoutDAO()
+        
+        var workout : Workout = Workout()
+        
+        workout.name = self.workoutTitleTextFieldOutlet.text!
+        workout.description = self.workoutDescriptionTextFieldOutlet.text!
+        workout.frequency = self.setFrequencyTextFieldOutlet.text!
+        workout.exercises = self.exercises
+        
+        workoutDAO.create(workout: workout)
+        
+        
         
         
     }

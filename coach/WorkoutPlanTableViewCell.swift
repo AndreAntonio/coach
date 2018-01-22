@@ -17,7 +17,13 @@ class WorkoutPlanTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        self.cardUIViewOutlet.layer.masksToBounds = false
+        self.cardUIViewOutlet.layer.shadowOpacity = 1
+        self.cardUIViewOutlet.layer.shadowColor = UIColor.black.cgColor
+        self.cardUIViewOutlet.layer.shadowOffset = CGSize.zero
+        self.cardUIViewOutlet.layer.shadowRadius = 2
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

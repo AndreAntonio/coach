@@ -8,12 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		1917E8EC1FFED0D1004D7ABC /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1917E8EB1FFED0D1004D7ABC /* iAd.framework */; };
+		1948922A2014F4D800823503 /* ProgressEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194892292014F4D800823503 /* ProgressEntry.swift */; };
+		1948922C2014F60E00823503 /* ProgressEntryDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1948922B2014F60E00823503 /* ProgressEntryDAO.swift */; };
 		19725524200576D200AF0013 /* UserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19725523200576D200AF0013 /* UserDAO.swift */; };
 		197255262007FB7700AF0013 /* WorkoutPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197255252007FB7600AF0013 /* WorkoutPlanTableViewCell.swift */; };
 		197255282008581600AF0013 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197255272008581600AF0013 /* Workout.swift */; };
 		1972552A2008590100AF0013 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197255292008590000AF0013 /* Exercise.swift */; };
 		1972552C20085A6E00AF0013 /* WorkoutDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1972552B20085A6E00AF0013 /* WorkoutDAO.swift */; };
 		1972552E20085A7600AF0013 /* ExerciseDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1972552D20085A7600AF0013 /* ExerciseDAO.swift */; };
+		19725530200D167100AF0013 /* CustomUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1972552F200D167100AF0013 /* CustomUITextField.swift */; };
+		19725534200D16D700AF0013 /* NewWorkoutPlanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19725533200D16D700AF0013 /* NewWorkoutPlanViewController.swift */; };
+		1972553620109B4700AF0013 /* SetWorkoutFrequencyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1972553520109B4700AF0013 /* SetWorkoutFrequencyViewController.swift */; };
+		197255382010F59C00AF0013 /* NewExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197255372010F59C00AF0013 /* NewExerciseViewController.swift */; };
+		1972553A201298D500AF0013 /* NewProgressEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19725539201298D500AF0013 /* NewProgressEntryViewController.swift */; };
 		19A9B2691FFEDB3D005520CA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19A9B2681FFEDB3D005520CA /* GoogleService-Info.plist */; };
 		19A9B26B20040213005520CA /* ProgressTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A9B26A20040213005520CA /* ProgressTableViewCell.swift */; };
 		19E339DD1FF58B73007D8ED2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E339DC1FF58B73007D8ED2 /* AppDelegate.swift */; };
@@ -54,12 +61,19 @@
 
 /* Begin PBXFileReference section */
 		1917E8EB1FFED0D1004D7ABC /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
+		194892292014F4D800823503 /* ProgressEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressEntry.swift; sourceTree = "<group>"; };
+		1948922B2014F60E00823503 /* ProgressEntryDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressEntryDAO.swift; sourceTree = "<group>"; };
 		19725523200576D200AF0013 /* UserDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDAO.swift; sourceTree = "<group>"; };
 		197255252007FB7600AF0013 /* WorkoutPlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlanTableViewCell.swift; sourceTree = "<group>"; };
 		197255272008581600AF0013 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
 		197255292008590000AF0013 /* Exercise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Exercise.swift; sourceTree = "<group>"; };
 		1972552B20085A6E00AF0013 /* WorkoutDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDAO.swift; sourceTree = "<group>"; };
 		1972552D20085A7600AF0013 /* ExerciseDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseDAO.swift; sourceTree = "<group>"; };
+		1972552F200D167100AF0013 /* CustomUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUITextField.swift; sourceTree = "<group>"; };
+		19725533200D16D700AF0013 /* NewWorkoutPlanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewWorkoutPlanViewController.swift; sourceTree = "<group>"; };
+		1972553520109B4700AF0013 /* SetWorkoutFrequencyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetWorkoutFrequencyViewController.swift; sourceTree = "<group>"; };
+		197255372010F59C00AF0013 /* NewExerciseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewExerciseViewController.swift; sourceTree = "<group>"; };
+		19725539201298D500AF0013 /* NewProgressEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProgressEntryViewController.swift; sourceTree = "<group>"; };
 		19A9B2681FFEDB3D005520CA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/Pasta Sem Título 2/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		19A9B26A20040213005520CA /* ProgressTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressTableViewCell.swift; sourceTree = "<group>"; };
 		19E339D91FF58B73007D8ED2 /* coach.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coach.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +156,7 @@
 				19725523200576D200AF0013 /* UserDAO.swift */,
 				1972552B20085A6E00AF0013 /* WorkoutDAO.swift */,
 				1972552D20085A7600AF0013 /* ExerciseDAO.swift */,
+				1948922B2014F60E00823503 /* ProgressEntryDAO.swift */,
 			);
 			name = "Data Access Objects";
 			sourceTree = "<group>";
@@ -207,6 +222,7 @@
 				19E33A1D1FFBD194007D8ED2 /* User.swift */,
 				197255272008581600AF0013 /* Workout.swift */,
 				197255292008590000AF0013 /* Exercise.swift */,
+				194892292014F4D800823503 /* ProgressEntry.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -218,6 +234,7 @@
 				19E339E01FF58B73007D8ED2 /* Main.storyboard */,
 				19A9B26A20040213005520CA /* ProgressTableViewCell.swift */,
 				197255252007FB7600AF0013 /* WorkoutPlanTableViewCell.swift */,
+				1972552F200D167100AF0013 /* CustomUITextField.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -231,6 +248,10 @@
 				19E33A171FFBCBD6007D8ED2 /* WorkoutPlanTableViewController.swift */,
 				19E33A191FFBCBE5007D8ED2 /* MealPlanTableViewController.swift */,
 				19E33A1B1FFBCC0E007D8ED2 /* UserSettingsViewController.swift */,
+				19725533200D16D700AF0013 /* NewWorkoutPlanViewController.swift */,
+				1972553520109B4700AF0013 /* SetWorkoutFrequencyViewController.swift */,
+				197255372010F59C00AF0013 /* NewExerciseViewController.swift */,
+				19725539201298D500AF0013 /* NewProgressEntryViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -462,11 +483,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-coach/Pods-coach-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -547,17 +570,24 @@
 				19E33A141FFBBF68007D8ED2 /* SignUpViewController.swift in Sources */,
 				19E33A181FFBCBD6007D8ED2 /* WorkoutPlanTableViewController.swift in Sources */,
 				19A9B26B20040213005520CA /* ProgressTableViewCell.swift in Sources */,
+				19725530200D167100AF0013 /* CustomUITextField.swift in Sources */,
 				19725524200576D200AF0013 /* UserDAO.swift in Sources */,
 				19E33A1C1FFBCC0E007D8ED2 /* UserSettingsViewController.swift in Sources */,
+				1948922A2014F4D800823503 /* ProgressEntry.swift in Sources */,
+				197255382010F59C00AF0013 /* NewExerciseViewController.swift in Sources */,
 				19E33A121FFB17B9007D8ED2 /* SignInViewController.swift in Sources */,
 				1972552E20085A7600AF0013 /* ExerciseDAO.swift in Sources */,
 				19E33A1E1FFBD194007D8ED2 /* User.swift in Sources */,
+				1972553620109B4700AF0013 /* SetWorkoutFrequencyViewController.swift in Sources */,
 				19E33A161FFBCBB6007D8ED2 /* ProgressOverviewTableViewController.swift in Sources */,
 				19E33A1A1FFBCBE5007D8ED2 /* MealPlanTableViewController.swift in Sources */,
 				1972552A2008590100AF0013 /* Exercise.swift in Sources */,
 				19E339DD1FF58B73007D8ED2 /* AppDelegate.swift in Sources */,
 				197255262007FB7700AF0013 /* WorkoutPlanTableViewCell.swift in Sources */,
+				1948922C2014F60E00823503 /* ProgressEntryDAO.swift in Sources */,
 				197255282008581600AF0013 /* Workout.swift in Sources */,
+				19725534200D16D700AF0013 /* NewWorkoutPlanViewController.swift in Sources */,
+				1972553A201298D500AF0013 /* NewProgressEntryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@ target 'coach' do
  pod 'Firebase/Database'
  pod 'Firebase/Auth'
  pod 'Firebase/Storage'
+ pod 'SDWebImage'
 
   target 'coachTests' do
     inherit! :search_paths

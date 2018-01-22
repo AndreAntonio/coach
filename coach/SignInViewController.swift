@@ -11,6 +11,7 @@ import Firebase
 
 class SignInViewController: UIViewController, UITextFieldDelegate{
     
+    
     @IBOutlet weak var usernameTextFieldOutlet: UITextField!
     @IBOutlet weak var passwordTextFieldOutlet: UITextField!
     @IBOutlet weak var signInButtonOutlet: UIButton!
@@ -18,11 +19,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         var textFields = [usernameTextFieldOutlet, passwordTextFieldOutlet]
         self.setupTextFields(textFields: textFields as! [UITextField])
 
-    
-        
         
     }
 

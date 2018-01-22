@@ -17,7 +17,13 @@ class ProgressTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        self.progressBackgroundImage.layer.masksToBounds = false
+        self.progressBackgroundImage.layer.shadowOpacity = 1
+        self.progressBackgroundImage.layer.shadowColor = UIColor.black.cgColor
+        self.progressBackgroundImage.layer.shadowOffset = CGSize.zero
+        self.progressBackgroundImage.layer.shadowRadius = 2
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

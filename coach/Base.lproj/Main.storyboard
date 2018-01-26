@@ -636,7 +636,7 @@
             </objects>
             <point key="canvasLocation" x="5876" y="-1347.0764617691154"/>
         </scene>
-        <!--Title-->
+        <!--Workout Detail-->
         <scene sceneID="6IE-IK-LUZ">
             <objects>
                 <viewController storyboardIdentifier="workoutDetailViewController" hidesBottomBarWhenPushed="YES" id="WI7-nm-nZa" customClass="WorkoutDetailViewController" customModule="coach" customModuleProvider="target" sceneMemberID="viewController">
@@ -727,7 +727,7 @@
                         <color key="backgroundColor" red="0.12549019610000001" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="kkY-rI-qSS"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="JAp-pt-9aJ">
+                    <navigationItem key="navigationItem" title="Workout Detail" id="JAp-pt-9aJ">
                         <barButtonItem key="rightBarButtonItem" title="Delete" image="delete_icon" id="LTo-iy-Iy7">
                             <connections>
                                 <action selector="deleteButtonTapped:" destination="WI7-nm-nZa" id="WRR-gP-ieu"/>
@@ -826,7 +826,7 @@
             </objects>
             <point key="canvasLocation" x="3685.5999999999999" y="-2054.1229385307347"/>
         </scene>
-        <!--Title-->
+        <!--New Entry-->
         <scene sceneID="V2d-yq-s0b">
             <objects>
                 <viewController storyboardIdentifier="newProgressEntryViewController" hidesBottomBarWhenPushed="YES" id="uu6-5p-k1j" customClass="NewProgressEntryViewController" customModule="coach" customModuleProvider="target" sceneMemberID="viewController">
@@ -897,7 +897,7 @@
                         <color key="backgroundColor" red="0.12549019610000001" green="0.10980392160000001" blue="0.10980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Uns-EF-THo"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="nsJ-Cp-cz5"/>
+                    <navigationItem key="navigationItem" title="New Entry" id="nsJ-Cp-cz5"/>
                     <connections>
                         <outlet property="addProgressImageButtonOutlet" destination="6bs-4D-KYF" id="k4M-HN-rGO"/>
                         <outlet property="currentWeightTextFieldOutlet" destination="tk6-vf-FrS" id="H9E-Al-heR"/>
@@ -910,7 +910,7 @@
             </objects>
             <point key="canvasLocation" x="4405.6000000000004" y="-2054.1229385307347"/>
         </scene>
-        <!--Title-->
+        <!--Progress Entry-->
         <scene sceneID="kfP-We-Rqe">
             <objects>
                 <viewController storyboardIdentifier="progressEntryDetailViewController" hidesBottomBarWhenPushed="YES" id="cQt-3n-pWt" customClass="ProgressEntryDetailViewController" customModule="coach" customModuleProvider="target" sceneMemberID="viewController">
@@ -943,11 +943,25 @@
                                 <rect key="frame" x="12" y="131" width="350" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sdr-fu-GEp">
+                                <rect key="frame" x="12" y="511" width="350" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jjn-kq-tgZ">
+                                        <rect key="frame" x="24" y="14" width="302" height="52"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Graduate-Regular" family="Graduate" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.40140845069999997" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.12586373090744019" green="0.10974631458520889" blue="0.10958779603242874" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="vwg-hv-SD1"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="A63-nl-nEu">
+                    <navigationItem key="navigationItem" title="Progress Entry" id="A63-nl-nEu">
                         <barButtonItem key="rightBarButtonItem" title="Delete" image="delete_icon" id="8TS-LR-oMs">
                             <connections>
                                 <action selector="deleteButtonTapped:" destination="cQt-3n-pWt" id="mUb-mo-LfL"/>
@@ -956,6 +970,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="dateLabelOutlet" destination="kDk-t9-KVR" id="typ-eJ-FYv"/>
+                        <outlet property="milestoneTextFieldOutlet" destination="jjn-kq-tgZ" id="9kr-85-Wb6"/>
                         <outlet property="progressImageOutlet" destination="1II-qN-r7c" id="ICp-8u-N9X"/>
                         <outlet property="weightLabelOutlet" destination="kYQ-fh-CQ1" id="9ZU-1P-gZ0"/>
                     </connections>

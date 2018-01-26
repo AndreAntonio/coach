@@ -41,6 +41,7 @@ class ProgressOverviewTableViewController: UITableViewController {
                 let weekday = data!["weekday"] as! String
                 let dateDisplay = data!["dateDisplay"] as! String
                 let imageUrl = data!["imageUrl"] as! String
+                let milestone = data!["milestone"] as! String
                 
                 let entryInstance = ProgressEntry()
                 
@@ -55,6 +56,7 @@ class ProgressOverviewTableViewController: UITableViewController {
                     entryInstance.progressImage = image
                 })
                 
+                entryInstance.milestone = milestone
                 entryInstance.id = id
                 entryInstance.currentWeight = currentWeight
                 entryInstance.weekday = weekday

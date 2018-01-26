@@ -12,6 +12,9 @@ import Firebase
 
 class ProgressEntryDetailViewController: UIViewController {
     
+    
+    @IBOutlet weak var milestoneTextFieldOutlet: UILabel!
+    
     @IBOutlet weak var weightLabelOutlet: UILabel!
     @IBOutlet weak var dateLabelOutlet: UILabel!
     @IBOutlet weak var progressImageOutlet: UIImageView!
@@ -21,6 +24,7 @@ class ProgressEntryDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.milestoneTextFieldOutlet.text = progressEntry.milestone
         
         self.weightLabelOutlet.text = self.progressEntry.currentWeight + " Kg"
         self.dateLabelOutlet.text = self.progressEntry.weekday + "," + " " + self.progressEntry.dateDisplay

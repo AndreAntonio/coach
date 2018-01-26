@@ -26,6 +26,11 @@ class SetWorkoutFrequencyViewController: UIViewController, UIPickerViewDelegate,
 
         self.backgroundViewOutlet.layer.masksToBounds = true
         self.backgroundViewOutlet.layer.cornerRadius = 2
+        
+        self.backgroundViewOutlet.layer.shadowOpacity = 1
+        self.backgroundViewOutlet.layer.shadowColor = UIColor.black.cgColor
+        self.backgroundViewOutlet.layer.shadowOffset = CGSize.zero
+        self.backgroundViewOutlet.layer.shadowRadius = 2
        
         self.frequencyPickerViewOutlet.dataSource = self
         self.frequencyPickerViewOutlet.delegate = self

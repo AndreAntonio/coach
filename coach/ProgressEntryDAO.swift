@@ -117,7 +117,7 @@ public class ProgressEntryDAO {
                     
                     progressEntry.progressImageUrl = (metadata?.downloadURL()?.absoluteString)!
                     
-                    let progressEntryData = ["imageUrl" : progressEntry.progressImageUrl, "date" : progressEntry.date,"dateDisplay" : progressEntry.dateDisplay, "weekday" : progressEntry.weekday, "milestone" : progressEntry.milestone, "currentWeight" : progressEntry.currentWeight] as [String : Any]
+                    let progressEntryData = ["id": progressId, "imageUrl" : progressEntry.progressImageUrl, "date" : progressEntry.date,"dateDisplay" : progressEntry.dateDisplay, "weekday" : progressEntry.weekday, "milestone" : progressEntry.milestone, "currentWeight" : progressEntry.currentWeight] as [String : Any]
                     user.child("progressEntries").child(progressId).setValue(progressEntryData)
                     
                 } else {

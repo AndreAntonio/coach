@@ -12,6 +12,7 @@ class MealPlanTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
 
         // Do any additional setup after loading the view.
     }

@@ -11,6 +11,7 @@ import UIKit
 
 public class ProgressEntry {
     
+    var id : String!
     var progressImage : UIImage!
     var progressImageUrl : String
     var weekday : String
@@ -21,6 +22,7 @@ public class ProgressEntry {
     
     public init () {
         
+        self.id = ""
         self.progressImageUrl = ""
         self.weekday = ""
         self.dateDisplay = ""

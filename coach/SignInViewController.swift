@@ -16,9 +16,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var passwordTextFieldOutlet: UITextField!
     @IBOutlet weak var signInButtonOutlet: UIButton!
     
+    var isUsernameFieldValid : Bool = false
+    var isPasswordFieldValid : Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         
         var textFields = [usernameTextFieldOutlet, passwordTextFieldOutlet]
@@ -38,20 +40,38 @@ class SignInViewController: UIViewController, UITextFieldDelegate{
     
     @IBAction func SignInButtonTapped(_ sender: Any) {
         
-        let user = Auth.auth()
-        
-        user.signIn(withEmail: usernameTextFieldOutlet.text!, password: passwordTextFieldOutlet.text!) { (user, error) in
+        if self.isPasswordFieldValid == true && self.isUsernameFieldValid == true {
             
-            if error == nil {
-               
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                var nextVC = storyboard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
-                self.present(nextVC, animated: true, completion: nil)
+            let user = Auth.auth()
+            
+            user.signIn(withEmail: usernameTextFieldOutlet.text!, password: passwordTextFieldOutlet.text!) { (user, error) in
                 
-            } else {
-                print(error.debugDescription)
+                if error == nil {
+                    
+                    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                    var nextVC = storyboard.instantiateViewController(withIdentifier: "tabBarController") as! UITabBarController
+                    self.present(nextVC, animated: true, completion: nil)
+                    
+                } else {
+                    var alert = UIAlertController(title: "Error", message:String(describing: error), preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    
+                    self.present(alert, animated: true, completion: nil)                }
             }
+            
+        } else {
+            
+          var alert = UIAlertController(title: "Fields not valid", message: "One or Both vields are not valid. Please, revise them.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+            
         }
+        
+        
+        
+        
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -66,5 +86,21 @@ class SignInViewController: UIViewController, UITextFieldDelegate{
         self.present(nextVC, animated: true, completion: nil)
 
 }
+    
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+        
+        if self.usernameTextFieldOutlet.text?.isEmpty == true {
+            self.isUsernameFieldValid = false
+        } else if self.usernameTextFieldOutlet.text?.isEmpty == false {
+            self.isUsernameFieldValid = true
+        }
+        
+        if self.passwordTextFieldOutlet.text?.isEmpty == true {
+            self.isPasswordFieldValid = false
+        } else if self.passwordTextFieldOutlet.text?.isEmpty == false {
+            self.isPasswordFieldValid = true
+        }
+        
+    }
     
 }

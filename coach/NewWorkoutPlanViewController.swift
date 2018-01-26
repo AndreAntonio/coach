@@ -45,7 +45,7 @@ class NewWorkoutPlanViewController: UIViewController, UITextFieldDelegate, UITab
         
         super.viewWillAppear(true)
         
-        print("eai n vai funfar memo ?")
+       
         
         self.exercises = DataManager.shared.exercises
         print(exercises)
@@ -94,7 +94,7 @@ class NewWorkoutPlanViewController: UIViewController, UITextFieldDelegate, UITab
             
             self.view.endEditing(true)
             
-            print("é isso q nois tamo buscando")
+       
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             
@@ -138,10 +138,14 @@ class NewWorkoutPlanViewController: UIViewController, UITextFieldDelegate, UITab
         
         workoutDAO.create(workout: workout)
         
+    }
+    
+    @IBAction func cancelButtonTapped(_ sender: Any) {
         
-        
+        self.navigationController?.popViewController(animated: true)
         
     }
+    
     
     
 

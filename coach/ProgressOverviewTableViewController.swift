@@ -17,6 +17,11 @@ class ProgressOverviewTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Graduate-Regular", size: 16)!, NSAttributedStringKey.foregroundColor : UIColor.white]
+        
+        self.navigationController?.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSAttributedStringKey.font: UIFont(name: "Graduate-Regular", size: 16)!, NSAttributedStringKey.foregroundColor : UIColor.white], for: .normal)
+        
         self.tableView.separatorColor = UIColor.clear
         
         let userId = Auth.auth().currentUser?.uid as! String
@@ -31,6 +36,7 @@ class ProgressOverviewTableViewController: UITableViewController {
                 
                 let data = child.value as? NSDictionary
                 
+                let id = data!["id"] as! String
                 let currentWeight = data!["currentWeight"] as! String
                 let weekday = data!["weekday"] as! String
                 let dateDisplay = data!["dateDisplay"] as! String
@@ -48,6 +54,8 @@ class ProgressOverviewTableViewController: UITableViewController {
                 imageView.sd_setImage(with: url, completed: { (image, error, cache, url) in
                     entryInstance.progressImage = image
                 })
+                
+                entryInstance.id = id
                 entryInstance.currentWeight = currentWeight
                 entryInstance.weekday = weekday
                 entryInstance.dateDisplay = dateDisplay
@@ -56,6 +64,8 @@ class ProgressOverviewTableViewController: UITableViewController {
                 
             }
             self.progressEntries = newItems
+            self.progressEntries.reverse()
+            
             self.tableView.reloadData()
             
         })
@@ -103,6 +113,17 @@ class ProgressOverviewTableViewController: UITableViewController {
         let nextVC = storyboard.instantiateViewController(withIdentifier: "newProgressEntryViewController") as! NewProgressEntryViewController
         
         self.navigationController?.pushViewController(nextVC, animated: true)
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        var storyboard = UIStoryboard(name: "Main", bundle: nil)
+        var nextVc = storyboard.instantiateViewController(withIdentifier: "progressEntryDetailViewController") as! ProgressEntryDetailViewController
+        
+        nextVc.progressEntry = self.progressEntries[indexPath.row]
+        
+        self.navigationController?.pushViewController(nextVc, animated: true)
         
     }
     

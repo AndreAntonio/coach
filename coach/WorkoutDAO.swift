@@ -43,7 +43,7 @@ public class WorkoutDAO {
         
         let workouts = database.child("users").child(userId).child("workouts")
         
-        let workoutData = ["name" : workout.name, "description" : workout.description, "frequency": workout.frequency ] as [String : Any]
+        let workoutData = ["id" : workout.id, "name" : workout.name, "description" : workout.description, "frequency": workout.frequency ] as [String : Any]
         
         workouts.child(workout.id).setValue(workoutData)
         

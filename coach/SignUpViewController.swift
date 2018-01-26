@@ -126,5 +126,12 @@ class SignUpViewController: UIViewController, UITextFieldDelegate, UIImagePicker
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
+    
+    @IBAction func signInButtonTapped(_ sender: Any) {
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
 
 }

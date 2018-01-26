@@ -12,6 +12,7 @@ class NewExerciseViewController: UIViewController, UITextFieldDelegate, UIPicker
     
     var exercises : [Exercise] = []
     
+    @IBOutlet weak var backgroundViewOutlet: UIView!
     var presentWorkout : String!
     
     @IBOutlet weak var exerciseNameTextFieldOutlet: UITextField!
@@ -38,6 +39,14 @@ class NewExerciseViewController: UIViewController, UITextFieldDelegate, UIPicker
         self.exerciseNameTextFieldOutlet.layer.cornerRadius = 2
         self.exerciseNameTextFieldOutlet.frame.size.height = 45
 
+        self.backgroundViewOutlet.layer.masksToBounds = true
+        self.backgroundViewOutlet.layer.cornerRadius = 2
+        
+        self.backgroundViewOutlet.layer.shadowOpacity = 1
+        self.backgroundViewOutlet.layer.shadowColor = UIColor.black.cgColor
+        self.backgroundViewOutlet.layer.shadowOffset = CGSize.zero
+        self.backgroundViewOutlet.layer.shadowRadius = 2
+        
         // Do any additional setup after loading the view.
     }
 

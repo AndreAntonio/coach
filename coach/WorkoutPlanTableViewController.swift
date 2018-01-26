@@ -19,6 +19,15 @@ class WorkoutPlanTableViewController: UITableViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.separatorColor = UIColor.clear
+         self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Graduate-Regular", size: 16)!, NSAttributedStringKey.foregroundColor : UIColor.white]
+        
+    
+        
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
         
         let userId = Auth.auth().currentUser?.uid as! String
         let dbRef = Database.database().reference().child("users").child(userId).child("workouts")
@@ -30,25 +39,29 @@ class WorkoutPlanTableViewController: UITableViewController
             for child in snapshot.children.allObjects as! [DataSnapshot] {
                 
                 let data = child.value as? NSDictionary
-                
                 let workoutName = data!["name"] as! String
                 let workoutDescription = data!["description"] as! String
+                let workoutFrequency = data!["frequency"] as! String
+                let workoutId = data!["id"] as! String
                 
                 let workoutInstance = Workout()
                 
+                workoutInstance.frequency = workoutFrequency
                 workoutInstance.name = workoutName
                 workoutInstance.description = workoutDescription
+                workoutInstance.id = workoutId
                 
-                newItems.append(workoutInstance)
+                
+             newItems.append(workoutInstance)
                 
             }
             
             self.workouts = newItems
             self.tableView.reloadData()
-            
+           
         })
-       
-    
+
+        
         
         
     }
@@ -85,5 +98,16 @@ class WorkoutPlanTableViewController: UITableViewController
         
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let nextVc = storyboard.instantiateViewController(withIdentifier: "workoutDetailViewController") as! WorkoutDetailViewController
+        
+        nextVc.workout = self.workouts[indexPath.row]
+        
+        self.navigationController?.pushViewController(nextVc, animated: true)
+        
+        
+    }
     
 }

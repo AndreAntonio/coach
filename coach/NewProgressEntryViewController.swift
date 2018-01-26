@@ -66,7 +66,7 @@ class NewProgressEntryViewController: UIViewController, UITextFieldDelegate,UIIm
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-        print("é isso")
+        
         
         self.retrievedImage = info[UIImagePickerControllerOriginalImage] as! UIImage
     
@@ -77,7 +77,12 @@ class NewProgressEntryViewController: UIViewController, UITextFieldDelegate,UIIm
         progressEntry.milestone = self.milestoneTextFieldOutlet.text!
         
         self.progressEntryDAO.create(progressEntry: progressEntry)
-        self.dismiss(animated: true, completion: nil)
+        
+        self.dismiss(animated: true) {
+            
+            self.navigationController?.popViewController(animated: true)
+            
+        }
         
     }
     

@@ -19,6 +19,8 @@ public class UserDAO {
     
     public func create(user : User){
         
+        print("creating user")
+        
         let users = database.child("users")
         let images = storage.child("images")
         let profile_pics = images.child("profile_pics")

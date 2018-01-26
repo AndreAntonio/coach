@@ -11,6 +11,11 @@
 		1948922A2014F4D800823503 /* ProgressEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194892292014F4D800823503 /* ProgressEntry.swift */; };
 		1948922C2014F60E00823503 /* ProgressEntryDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1948922B2014F60E00823503 /* ProgressEntryDAO.swift */; };
 		1948922E2016593D00823503 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1948922D2016593D00823503 /* DataManager.swift */; };
+		194892302017CE5300823503 /* ExerciseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1948922F2017CE5300823503 /* ExerciseTableViewCell.swift */; };
+		194892322017CEFE00823503 /* WorkoutDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194892312017CEFE00823503 /* WorkoutDetailViewController.swift */; };
+		194892342018538500823503 /* ProgressEntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194892332018538500823503 /* ProgressEntryDetailViewController.swift */; };
+		1948923820197E3400823503 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1948923620197E3000823503 /* OFL.txt */; };
+		1948923920197E3400823503 /* Graduate-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1948923720197E3000823503 /* Graduate-Regular.ttf */; };
 		19725524200576D200AF0013 /* UserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19725523200576D200AF0013 /* UserDAO.swift */; };
 		197255262007FB7700AF0013 /* WorkoutPlanTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197255252007FB7600AF0013 /* WorkoutPlanTableViewCell.swift */; };
 		197255282008581600AF0013 /* Workout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197255272008581600AF0013 /* Workout.swift */; };
@@ -65,6 +70,11 @@
 		194892292014F4D800823503 /* ProgressEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressEntry.swift; sourceTree = "<group>"; };
 		1948922B2014F60E00823503 /* ProgressEntryDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressEntryDAO.swift; sourceTree = "<group>"; };
 		1948922D2016593D00823503 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		1948922F2017CE5300823503 /* ExerciseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseTableViewCell.swift; sourceTree = "<group>"; };
+		194892312017CEFE00823503 /* WorkoutDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutDetailViewController.swift; sourceTree = "<group>"; };
+		194892332018538500823503 /* ProgressEntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressEntryDetailViewController.swift; sourceTree = "<group>"; };
+		1948923620197E3000823503 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		1948923720197E3000823503 /* Graduate-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Graduate-Regular.ttf"; sourceTree = "<group>"; };
 		19725523200576D200AF0013 /* UserDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDAO.swift; sourceTree = "<group>"; };
 		197255252007FB7600AF0013 /* WorkoutPlanTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutPlanTableViewCell.swift; sourceTree = "<group>"; };
 		197255272008581600AF0013 /* Workout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workout.swift; sourceTree = "<group>"; };
@@ -152,6 +162,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		1948923520197E3000823503 /* Graduate */ = {
+			isa = PBXGroup;
+			children = (
+				1948923620197E3000823503 /* OFL.txt */,
+				1948923720197E3000823503 /* Graduate-Regular.ttf */,
+			);
+			path = Graduate;
+			sourceTree = "<group>";
+		};
 		19725522200576B700AF0013 /* Data Access Objects */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +211,7 @@
 				19E33A0F1FFB1778007D8ED2 /* View */,
 				19E33A0E1FFB1771007D8ED2 /* Model */,
 				19E339DC1FF58B73007D8ED2 /* AppDelegate.swift */,
+				1948923520197E3000823503 /* Graduate */,
 				19E339E31FF58B73007D8ED2 /* Assets.xcassets */,
 				19A9B2681FFEDB3D005520CA /* GoogleService-Info.plist */,
 				19E339E81FF58B73007D8ED2 /* Info.plist */,
@@ -237,6 +257,7 @@
 				19A9B26A20040213005520CA /* ProgressTableViewCell.swift */,
 				197255252007FB7600AF0013 /* WorkoutPlanTableViewCell.swift */,
 				1972552F200D167100AF0013 /* CustomUITextField.swift */,
+				1948922F2017CE5300823503 /* ExerciseTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -255,6 +276,8 @@
 				197255372010F59C00AF0013 /* NewExerciseViewController.swift */,
 				19725539201298D500AF0013 /* NewProgressEntryViewController.swift */,
 				1948922D2016593D00823503 /* DataManager.swift */,
+				194892312017CEFE00823503 /* WorkoutDetailViewController.swift */,
+				194892332018538500823503 /* ProgressEntryDetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -387,9 +410,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1948923820197E3400823503 /* OFL.txt in Resources */,
 				19E339E71FF58B73007D8ED2 /* LaunchScreen.storyboard in Resources */,
 				19A9B2691FFEDB3D005520CA /* GoogleService-Info.plist in Resources */,
 				19E339E41FF58B73007D8ED2 /* Assets.xcassets in Resources */,
+				1948923920197E3400823503 /* Graduate-Regular.ttf in Resources */,
 				19E339E21FF58B73007D8ED2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -569,6 +594,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				194892322017CEFE00823503 /* WorkoutDetailViewController.swift in Sources */,
 				1972552C20085A6E00AF0013 /* WorkoutDAO.swift in Sources */,
 				19E33A141FFBBF68007D8ED2 /* SignUpViewController.swift in Sources */,
 				19E33A181FFBCBD6007D8ED2 /* WorkoutPlanTableViewController.swift in Sources */,
@@ -578,6 +604,7 @@
 				19725524200576D200AF0013 /* UserDAO.swift in Sources */,
 				19E33A1C1FFBCC0E007D8ED2 /* UserSettingsViewController.swift in Sources */,
 				1948922A2014F4D800823503 /* ProgressEntry.swift in Sources */,
+				194892302017CE5300823503 /* ExerciseTableViewCell.swift in Sources */,
 				197255382010F59C00AF0013 /* NewExerciseViewController.swift in Sources */,
 				19E33A121FFB17B9007D8ED2 /* SignInViewController.swift in Sources */,
 				1972552E20085A7600AF0013 /* ExerciseDAO.swift in Sources */,
@@ -590,6 +617,7 @@
 				197255262007FB7700AF0013 /* WorkoutPlanTableViewCell.swift in Sources */,
 				1948922C2014F60E00823503 /* ProgressEntryDAO.swift in Sources */,
 				197255282008581600AF0013 /* Workout.swift in Sources */,
+				194892342018538500823503 /* ProgressEntryDetailViewController.swift in Sources */,
 				19725534200D16D700AF0013 /* NewWorkoutPlanViewController.swift in Sources */,
 				1972553A201298D500AF0013 /* NewProgressEntryViewController.swift in Sources */,
 			);

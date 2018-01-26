@@ -23,6 +23,7 @@ class UserSettingsViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "Graduate-Regular", size: 16)!, NSAttributedStringKey.foregroundColor : UIColor.white]
                 
         self.userInfoTableViewOutlet.delegate = self
         self.userInfoTableViewOutlet.dataSource = self
@@ -51,6 +52,8 @@ class UserSettingsViewController: UIViewController, UITableViewDelegate, UITable
                 print("imagem exibida")
             })
             
+            self.userInfoTableViewOutlet.reloadData()
+            
         }
         
         
@@ -67,7 +70,7 @@ class UserSettingsViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.userInfoTitle.count
+        return self.userInfoDetail.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -75,11 +78,35 @@ class UserSettingsViewController: UIViewController, UITableViewDelegate, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! UITableViewCell
     
         cell.textLabel?.text = self.userInfoTitle[indexPath.row]
+        cell.textLabel?.textColor = UIColor.white
+        cell.detailTextLabel?.text = self.userInfoDetail[indexPath.row]
+        cell.detailTextLabel?.textColor = UIColor.white
 
     
         return cell
         
     }
+    
+    @IBAction func signOutButtonTapped(_ sender: Any) {
+        
+       let auth = Auth.auth()
+        do {
+            try auth.signOut()
+            
+            var storyboard = UIStoryboard(name: "Main", bundle: nil)
+            var nextVC = storyboard.instantiateViewController(withIdentifier: "signInViewController") as! SignInViewController
+            self.present(nextVC, animated: true, completion: nil)
+            
+        } catch let signOutError as NSError {
+            print("error while signing out")
+        }
+        
+        
+        
+    }
+    
+    
+    
     
     
 }
